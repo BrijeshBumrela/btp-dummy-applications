@@ -1,7 +1,7 @@
 # This sample app shows how to use btp-fn-plotter in plain html file without any tooling setup
 
 # just grab the cdn for the npm package `btp-fn-plotter` 
-# `https://unpkg.com/btp-fn-plotter@1.0.7/dist/main.js`
+# `https://unpkg.com/btp-fn-plotter@1.1.1/dist/main.js`
 
 
 
