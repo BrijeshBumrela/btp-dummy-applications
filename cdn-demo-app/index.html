@@ -1,68 +1,80 @@
-<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-        />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <link rel="stylesheet" href="style.css" />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="https://unpkg.com/btp-fn-plotter@1.1.1/dist/main.js"></script>
-      </head>
-      <body>
-        <nav>
-          <div class="nav-wrapper orange">
-            <a href="#" class="brand-logo center">BTP Math blog</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-              <li><a href="#">Srikanth</a></li>
-              <li><a href="#">Brijesh</a></li>
-              <li><a href="#">Avinash</a></li>
-            </ul>
-          </div>
-        </nav>
-    
-        <div style="padding-top: 3%;"> <h2 class="center">Add custom CSS.</h2></div>
-       
-        <div class="container">
-          <br />
-          <div id="my-plot1" class="card hoverable"></div>
-          <div class="container text-exp1"><p><span class=""> This website is a demo for btp project.</span></p>
-          <p>Contains showcase of how users can simply use our library with other css libraries or write their own css.</p>
-          </div>
-          <br>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://unpkg.com/btp-fn-plotter@1.0.9/dist/main.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper orange">
+        <a href="#" class="brand-logo center">BTP Math blog</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="#">Srikanth</a></li>
+          <li><a href="#">Brijesh</a></li>
+          <li><a href="#">Avinash</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div style="padding-top: 3%;"> <h2 class="center">Add custom CSS.</h2></div>
+   
+    <div class="container">
+      <br />
+      <div id="my-plot1" class="card hoverable"></div>
+      <div class="container text-exp1"><p><span class=""> This website is a demo for btp project.</span></p>
+      <p>Contains showcase of how users can simply use our library with other css libraries or write their own css.</p>
+      </div>
+      <br>
+    </div>
+
+    <br>
+    <div style="padding-top: 20%;"> <h2 class="center">Or work in parellel with other css libraries.</h2><br><p class="center">Used materialize as an example here.</p></div>
+    <div class="container center">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="https://media.emailonacid.com/wp-content/uploads/2019/04/Picture21.png">
         </div>
-    
-        <br>
-        <div style="padding-top: 20%;"> <h2 class="center">Or work in parellel with other css libraries.</h2><br><p class="center">Used materialize as an example here.</p></div>
-        <div class="container center">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="https://media.emailonacid.com/wp-content/uploads/2019/04/Picture21.png">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">The graph is hidden.<i class="material-icons right">more_vert</i></span>
-              
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Graph is visible.<i class="material-icons right">close</i></span>
-              <p>
-                <div id="plot3"></div>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem officiis blanditiis quis quod a, ea officia natus amet laborum optio!</p>
-              </p>
-            </div>
-          </div>
-                    
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">The graph is hidden.<i class="material-icons right">more_vert</i></span>
+          
         </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Graph is visible.<i class="material-icons right">close</i></span>
+          <p>
+            <div id="plot3"></div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem officiis blanditiis quis quod a, ea officia natus amet laborum optio!</p>
+          </p>
+        </div>
+      </div>
+             <br>   
+    </div>
+    <div class="container">
+    <button id="getdata">Get Snapshot</button>
+    <button id="copydata">Copy Snapshot</button>
+    <textarea id="data"></textarea>
+    </div>
+<br>
+  </body>
+  <script>
+    drawFromPath("./value.json", "#my-plot1");
+ 
+    drawFromPath("./value.json", "#plot3");
     
-    
-      </body>
-      <script>
-        drawFromPath("./value.json", "#my-plot1");
-        drawFromPath("./value.json", "#plot3");
-        
-      </script>
+    document.getElementById('getdata').onclick = () =>{
+        let svgdata = getsvgdata('plot3');
+        document.getElementById('data').value = svgdata;
+      };
+      document.getElementById('copydata').onclick = () =>{
+        copydata('data');
+      }
+
+  </script>
 </html>
