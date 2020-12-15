@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "btp-fn-plotter": "^1.0.9",
+    "btp-fn-plotter": "^1.1.1",
     "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
