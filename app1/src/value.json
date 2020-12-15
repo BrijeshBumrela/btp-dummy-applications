@@ -1,0 +1,53 @@
+{
+    "data": [
+        {
+            "fn": "x^4",
+            "eqString": "x^4",
+            "closed": false,
+            "skiptip": false,
+            "color": "red",
+            "isDerivative": true,
+            "derivative": {
+                "fn": "4 * x ^ 3",
+                "updateOnMouseMove": true
+            }
+        },
+        {
+            "fn": "sin(x)",
+            "eqString": "sin(x)",
+            "closed": false,
+            "skiptip": false,
+            "color": "yellow",
+            "isDerivative": false
+        },
+        {
+            "fn": "1/x",
+            "eqString": "1/x",
+            "closed": true,
+            "skiptip": false,
+            "color": "red",
+            "isDerivative": false
+        }
+    ],
+    "title": "Bunch of graphs together",
+    "width": "800",
+    "height": "800",
+    "xAxis": {
+        "label": "X-values",
+        "type": "linear",
+        "domain": [
+            -6,
+            6
+        ]
+    },
+    "yAxis": {
+        "label": "Y-values",
+        "type": "linear",
+        "domain": [
+            -6,
+            6
+        ]
+    },
+    "grid": true,
+    "annotations": []
+}
